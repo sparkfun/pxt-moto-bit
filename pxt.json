@@ -1,0 +1,17 @@
+{
+    "name": "Motobit",
+    "version": "0.0.1",
+    "description": "SparkFun Motobit",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "motobit.ts"
+    ],
+    "testFiles": [
+        "tests.ts"
+    ],
+    "public": true
+}
