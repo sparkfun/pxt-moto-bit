@@ -1,5 +1,7 @@
 {
     "editor.formatOnType": true,
+    "editor.insertSpaces": true,    
+    "editor.detectIndentation": false,
     "files.autoSave": "afterDelay",
     "files.watcherExclude": {
         "**/.git/objects/**": true,

@@ -45,23 +45,23 @@ The block takes three parameters: motor select, direction, and speed.
 * Direction must be either `Forward` or `Reverse`
 * Speed is an integer value between `0` and `100`
 
-```blocks
-motobit.setMotor(motor.left/right, direction.forward/reverse, 0-100)
+```sig
+motobit.setMotorSpeed(Motor.Left, MotorDirection.Forward, 50)
 ```
 
 ### Invert Motor Directon
 
 When a motor turns opposite to the direction that was declared, the `invert` 
 block may be used. The block accepts two parameters: motor select, and a 
-boolean variable. When the boolean is set to `True`, the motor direction is 
+boolean variable. When the boolean is set to `true`, the motor direction is 
 inverted so that `Forward` no longer causes the motor to spin in `Reverse`, 
 but rather `Forward`.
 
 * The motor select must be either `Left` or `Right`
 * Invert must be either `true` or `false`
 
-```blocks
-motobit.invert(motor.left/right, true/false)
+```sig
+motobit.invert(Motor.Left, true)
 ```
 
 ### Enabling Motors
@@ -69,10 +69,10 @@ motobit.invert(motor.left/right, true/false)
 Regardless of the set motor speed, before the motors will turn on the switch on moto:bit
 must be set to **"Run Motors"**, and the enable motors command must be set to `ON`
 
-* Motor enable must be either `ON` or `OFF`
+* Motor enable must be either `On` or `Off`.
 
-```blocks
-motobit.enable(power.on/off)
+```sig
+motobit.enable(MotorPower.On)
 ```
 
 ## License
