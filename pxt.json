@@ -1,7 +1,7 @@
 {
-    "name": "Motobit",
+    "name": "motobit",
     "version": "0.0.1",
-    "description": "SparkFun Motobit",
+    "description": "SparkFun Moto:bit",
     "license": "MIT",
     "dependencies": {
         "core": "*"
