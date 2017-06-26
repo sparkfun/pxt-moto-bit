@@ -1,5 +1,9 @@
 # motobit
 
+![SparkFun Gamer:bit](https://raw.githubusercontent.com/sparkfun/pxt-moto-bit/master/icon.png)  
+
+The package adds support for the **gamer:bit** add-on board from SparkFun.
+
 TODO: To use this package, go to https://pxt.microbit.org, click ``Add package`` and search for **motobit**.
 
 ### ~ hint
@@ -73,6 +77,81 @@ must be set to **"Run Motors"**, and the enable motors command must be set to `O
 
 ```sig
 motobit.enable(MotorPower.On)
+```
+
+## Examples
+
+### Example: Receiving a packet of data over wireless
+
+The following program reads a string to control the direction of two motors.
+
+```blocks
+radio.onDataPacketReceived( ({ receivedString }) =>  {
+    // Drive forward
+    if (receivedString == "10000000") {
+        basic.showLeds(`
+            . . # . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `)
+        motobit.setMotorSpeed(Motor.Left, MotorDirection.Forward, 50)
+        motobit.setMotorSpeed(Motor.Right, MotorDirection.Forward, 50)
+        motobit.enable(MotorPower.On)
+    }
+    // Turn left
+    if (receivedString == "01000000") {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            # . . . .
+            . . . . .
+            . . . . .
+            `)
+        motobit.setMotorSpeed(Motor.Left, MotorDirection.Reverse, 50)
+        motobit.setMotorSpeed(Motor.Right, MotorDirection.Forward, 50)
+        motobit.enable(MotorPower.On)
+    }
+    // Turn right
+    if (receivedString == "00100000") {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . #
+            . . . . .
+            . . . . .
+            `)
+        motobit.setMotorSpeed(Motor.Left, MotorDirection.Forward, 50)
+        motobit.setMotorSpeed(Motor.Right, MotorDirection.Reverse, 50)
+        motobit.enable(MotorPower.On)
+    }
+    // Drive in reverse
+    if (receivedString == "00010000") {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . # . .
+            `)
+        motobit.setMotorSpeed(Motor.Left, MotorDirection.Reverse, 50)
+        motobit.setMotorSpeed(Motor.Right, MotorDirection.Reverse, 50)
+        motobit.enable(MotorPower.On)
+    }
+    // Stop
+    if (receivedString == "00000000") {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `)
+        motobit.enable(MotorPower.Off)
+    }
+})
+radio.setGroup(13)
 ```
 
 ## License
