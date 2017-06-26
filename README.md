@@ -1,4 +1,4 @@
-# moto:bit
+# Moto:bit
 
 ![SparkFun Moto:bit](https://raw.githubusercontent.com/sparkfun/pxt-moto-bit/master/icon.png)  
 
@@ -86,68 +86,45 @@ motobit.enable(MotorPower.On)
 The following program reads a string to control the direction of two motors.
 
 ```blocks
-radio.onDataPacketReceived( ({ receivedString }) =>  {
+radio.onDataPacketReceived( ({ receivedNumber }) =>  {
     // Drive forward
-    if (receivedString == "10000000") {
-        basic.showLeds(`
-            . . # . .
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
-            `)
+    if (receivedNumber == 128) {
+        led.plot(2, 0)
         motobit.setMotorSpeed(Motor.Left, MotorDirection.Forward, 50)
         motobit.setMotorSpeed(Motor.Right, MotorDirection.Forward, 50)
         motobit.enable(MotorPower.On)
+    } else {
+        led.unplot(2, 0)
     }
     // Turn left
-    if (receivedString == "01000000") {
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            # . . . .
-            . . . . .
-            . . . . .
-            `)
+    if (receivedNumber == 64) {
+        led.plot(0, 2)
         motobit.setMotorSpeed(Motor.Left, MotorDirection.Reverse, 50)
         motobit.setMotorSpeed(Motor.Right, MotorDirection.Forward, 50)
         motobit.enable(MotorPower.On)
+    } else {
+        led.unplot(0, 2)
     }
     // Turn right
-    if (receivedString == "00100000") {
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . . . #
-            . . . . .
-            . . . . .
-            `)
+    if (receivedNumber == 32) {
+        led.plot(4, 2)
         motobit.setMotorSpeed(Motor.Left, MotorDirection.Forward, 50)
         motobit.setMotorSpeed(Motor.Right, MotorDirection.Reverse, 50)
         motobit.enable(MotorPower.On)
+    } else {
+        led.unplot(4, 2)
     }
     // Drive in reverse
-    if (receivedString == "00010000") {
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
-            . . # . .
-            `)
+    if (receivedNumber == 16) {
+        led.plot(2, 4)
         motobit.setMotorSpeed(Motor.Left, MotorDirection.Reverse, 50)
         motobit.setMotorSpeed(Motor.Right, MotorDirection.Reverse, 50)
         motobit.enable(MotorPower.On)
+    } else {
+        led.unplot(2, 4)
     }
     // Stop
-    if (receivedString == "00000000") {
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
-            `)
+    if (receivedNumber == 0) {
         motobit.enable(MotorPower.Off)
     }
 })
