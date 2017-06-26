@@ -1,10 +1,10 @@
-# motobit
+# moto:bit
 
 ![SparkFun Moto:bit](https://raw.githubusercontent.com/sparkfun/pxt-moto-bit/master/icon.png)  
 
 The package adds support for the **moto:bit** add-on board from SparkFun.
 
-TODO: To use this package, go to https://pxt.microbit.org, click ``Add package`` and search for **motobit**.
+TODO: To use this package, go to https://pxt.microbit.org, click ``Add package`` and search for **moto-bit**.
 
 ### ~ hint
 
@@ -49,7 +49,7 @@ The block takes three parameters: motor select, direction, and speed.
 * Direction must be either `Forward` or `Reverse`
 * Speed is an integer value between `0` and `100`
 
-```sig
+```blocks
 motobit.setMotorSpeed(Motor.Left, MotorDirection.Forward, 50)
 ```
 
@@ -64,7 +64,7 @@ but rather `Forward`.
 * The motor select must be either `Left` or `Right`
 * Invert must be either `true` or `false`
 
-```sig
+```blocks
 motobit.invert(Motor.Left, true)
 ```
 
@@ -75,7 +75,7 @@ must be set to **"Run Motors"**, and the enable motors command must be set to `O
 
 * Motor enable must be either `On` or `Off`.
 
-```sig
+```blocks
 motobit.enable(MotorPower.On)
 ```
 
