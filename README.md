@@ -1,8 +1,8 @@
 # motobit
 
-![SparkFun Gamer:bit](https://raw.githubusercontent.com/sparkfun/pxt-moto-bit/master/icon.png)  
+![SparkFun Moto:bit](https://raw.githubusercontent.com/sparkfun/pxt-moto-bit/master/icon.png)  
 
-The package adds support for the **gamer:bit** add-on board from SparkFun.
+The package adds support for the **moto:bit** add-on board from SparkFun.
 
 TODO: To use this package, go to https://pxt.microbit.org, click ``Add package`` and search for **motobit**.
 
