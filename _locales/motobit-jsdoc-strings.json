@@ -1,0 +1,9 @@
+{
+  "motobit": "Functions to operate the moto:bit",
+  "motobit.enable": "Turns the motors on or off.",
+  "motobit.invert": "Changes the polarity of the selected motor.\ni.e. Forward -> Backward and Backward -> Forward",
+  "motobit.setMotorSpeed": "Sets the speed and direction of either the left motor or the right motor.",
+  "motobit.setMotorSpeed|param|direction": "forward or backward",
+  "motobit.setMotorSpeed|param|motor": "the motor to act on",
+  "motobit.setMotorSpeed|param|speed": "percent of maximum speed, eg: 50"
+}

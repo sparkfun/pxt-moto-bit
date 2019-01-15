@@ -1,0 +1,13 @@
+{
+  "Motor.Left|block": "gauche",
+  "Motor.Right|block": "droite",
+  "MotorDirection.Forward|block": "avant",
+  "MotorDirection.Reverse|block": "arrière",
+  "MotorPower.Off|block": "OFF",
+  "MotorPower.On|block": "ON",
+  "motobit.enable|block": "mettre moteurs à %command",
+  "motobit.invert|block": "inversion moteur  %motor_number|  %invert",
+  "motobit.setMotorSpeed|block": "mettre moteur %motor_number |en marche %path| à %speed|%",
+  "motobit|block": "moto:bit",
+  "{id:category}Motobit": "Motobit"
+}

@@ -1,0 +1,9 @@
+{
+  "motobit": "Fonction pour commander le moto:bit.",
+  "motobit.enable": "Mettre les moteurs en marche ou les arrêter.",
+  "motobit.invert": "Inverser ou non la polarité d'un moteur. En avant devient en arrière et vice-versa.\nc.à.d. Avant -> Arrière et Arrière -> Avant",
+  "motobit.setMotorSpeed": "Mettre un moteur en marche ou les arrêter selon une direction et un pourcentage de la vitesse maximale.",
+  "motobit.setMotorSpeed|param|direction": "en avant ou en arrière",
+  "motobit.setMotorSpeed|param|motor": "le moteur sur lequel agir",
+  "motobit.setMotorSpeed|param|speed": "pourcentage de la vitesse maximale, par exemple: 50"
+}
